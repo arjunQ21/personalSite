@@ -1,0 +1,14 @@
+div.topko{
+  background-image: url("bg2.jpg");
+  width: 100%;
+  min-height: 200px ;
+  background-repeat: no-repeat;
+  display: grid ;
+  padding: 10px ;
+  grid-gap: 10px ;
+  background-size: cover;
+}
+div.info{
+  color: white ;
+  font-family: Tahoma ;
+}
