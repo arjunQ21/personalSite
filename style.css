@@ -1,14 +1,39 @@
-div.topko{
-  background-image: url("bg2.jpg");
-  width: 100%;
+body{
+  margin: 0px ;
+  padding: 0px;
+}
+div.cont{
+  display: block;
+  margin: auto ;
+  margin-top: 0px;
+  padding: 0px 20px;
+}
+div.gridCont{
+  border: 2px solid #333;
+  display: flex ;
+  position: sticky;
+  top: 2px ;
+  flex-wrap: wrap;
+}
+div.leftko{
   min-height: 200px ;
-  background-repeat: no-repeat;
-  display: grid ;
-  padding: 10px ;
-  grid-gap: 10px ;
-  background-size: cover;
+  border: 1px solid black ;
+  width: 400px ;
+  position: sticky;
+  top: 0px ;
+}
+
+div.rightko{
+  border: 2px solid red ;
+  margin-left: 10px;
+}
+div.talako{
+  flex-basis: 100% ;
+  height: 20px ;
+  background: red ;
 }
 div.info{
-  color: white ;
+  /*color: white ;*/
   font-family: Tahoma ;
 }
+

@@ -1,0 +1,54 @@
+body{
+  margin: 0px ;
+  padding: 0px;
+  font-family: Tahoma ;
+}
+div.cont{
+  display: block;
+  margin: auto ;
+  margin-top: 0px;
+  padding: 0px 20px;
+}
+div.gridCont{
+	background: powderblue ;
+	padding: 10px ;
+	display: grid ;
+	grid-template-columns: 300px auto;
+	grid-template-areas: "top top" "left right" "bottom bottom" ;
+	grid-gap: 10px ;
+}
+div.gridCont>div{
+	border: 1px solid blue ;
+}
+div.gridTop{
+	grid-area: top ;
+}
+div.gridLeft{
+	grid-area: left;
+}
+div.gridRight{
+	grid-area: right;
+}
+div.gridBottom{
+	grid-area: bottom;
+}
+div.info{
+	position: sticky;
+	top: 0px;
+	text-align: center ;
+	color: #fff;
+	text-shadow: 1px 1px 5px #000 ;
+	padding-top: 15px;
+}
+div.profileImage{
+	width: 90%;
+	margin: auto;
+	border-radius: 50% ;
+
+}
+div.profileImage img{
+	width: 100% ;
+	border-radius: 50% ;
+	border: 2px dotted rgba(125, 125, 125, 0.7);
+
+}
