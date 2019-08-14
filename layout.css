@@ -2,29 +2,37 @@ body{
   margin: 0px ;
   padding: 0px;
   font-family: Tahoma ;
+  background: #F1F3F4 ;
 }
 div.cont{
   display: block;
   margin: auto ;
   margin-top: 0px;
-  padding: 0px 20px;
+  margin-bottom: 0px;
+  padding: 0px ;
+  width: calc(100% - 40px) ;
+  box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.3);
+  min-height: 100vh ;
+  background: white ;
 }
 div.gridCont{
-	background: powderblue ;
-	padding: 10px ;
+	/*background: powderblue ;*/
+	padding: 0px  ;
 	display: grid ;
 	grid-template-columns: 300px auto;
-	grid-template-areas: "top top" "left right" "bottom bottom" ;
+	/*grid-template-areas: "top top" "left right" "bottom bottom" ;*/
+	grid-template-areas: "left right" "bottom bottom" ;
 	grid-gap: 10px ;
 }
 div.gridCont>div{
-	border: 1px solid blue ;
+	/*border: 1px solid blue ;*/
 }
 div.gridTop{
 	grid-area: top ;
 }
 div.gridLeft{
 	grid-area: left;
+	border-right: 1px solid #ccc !important;
 }
 div.gridRight{
 	grid-area: right;
@@ -35,20 +43,146 @@ div.gridBottom{
 div.info{
 	position: sticky;
 	top: 0px;
+	overflow: hidden ;
+}
+.head-text{
 	text-align: center ;
-	color: #fff;
-	text-shadow: 1px 1px 5px #000 ;
-	padding-top: 15px;
+	color: #333;
 }
 div.profileImage{
 	width: 90%;
 	margin: auto;
-	border-radius: 50% ;
 
 }
 div.profileImage img{
 	width: 100% ;
 	border-radius: 50% ;
-	border: 2px dotted rgba(125, 125, 125, 0.7);
+	border: 1px solid rgba(125, 125, 125, 0.7);
+	padding: 5px;
+	margin-left: -8px;
+}
+div.buttons{
+	background: rgba(0,0,0,0.1) ;
+	background: #F1F3F4 ;
+	padding: 10px;
+	text-align: left ;
+}
+div.buttons a{
+	text-decoration: none ;
+	padding: 8px 15px ;
+	display: inline-block;
+	border-bottom: 1px solid #777;
+	border-left: 1px solid #777;
+	margin: 5px;
+	background: #f7f7f7 ;
+	background: #fff ;
+	color: #333 ;
+	font-weight: bold ;
+	border-radius: 3px;
+	transition: .4s;
+	font-family: Consolas ;
+}
+div.buttons a:hover{
+	padding: 8px 17px;
+	background: #fff ;
+	box-shadow: 1px 0px 3px 1px rgba(0,0,0,0.3);
+	border-left:2px solid #777; ;
+}
+div.buttons a:active{
+	background: #333 ;
+	border-left:2px solid #777; ;
+}
+div.tab{
+	/*border: 1px solid #333;*/
+	padding: 10px;
+	margin-bottom: 20px;
+	border-radius: 40px;
+}
+div.tab_title{
+	font-weight: bold ;
+	padding: 12px 20px;
+	font-size: 190% ;
+	letter-spacing: 2px ;
+	color: #555 ;
+	/*background: rgba(0,0,0,0.1);*/
+	/*background: #D8DADB ;*/
+	background: #F1F3F4 ;
+	border-bottom: 1px solid rgba(0,0,0,0.09);
+	position: sticky;
+	top: 0px;
+	z-index: 1;
+}
+div.tab_content{
+	font-family: sans-serif;
+	padding: 20px 10px ;
+	color: #333;
+	line-height: 23px ;
+	/*background: rgba(0,0,0,0.03);*/
 
+}
+div.icon_texts{
+	font-size: 140% ;
+	/*color: #333 ;*/
+}
+div.icon_texts a, .links{
+	font-family: Tahoma ;
+	color: #555 ;
+	text-decoration: none;
+	letter-spacing: 1px ;	
+}
+/*.links*/
+div.icon_texts a{
+	/*font-weight: bold ;*/
+	/*width: auto ; */
+	display: grid ;
+	grid-template-columns: 35px auto ;
+	/*grid-gap: 20px ;*/
+	grid-template-rows: 40px ;
+}
+div.icon_texts a:hover, .links:hover{
+	text-decoration: underline;
+}
+.links{
+	font-weight: bold ;
+}
+div.it_icon i{
+	font-size: 25px !important;
+}
+div.skill{
+	display: grid ;
+	grid-template-columns: 100px 60% auto ;
+	grid-gap: 15px;
+	margin-bottom: 15px ;
+	align-items: center ;
+}
+div.skill_name{
+	text-align: right;
+	font-weight: bold ;
+	font-family: Consolas ;
+}
+div.percent_text{
+	font-family: Consolas ;
+	font-weight: bold ;
+}
+div.p_full{
+	width: 100% ;
+	/*border: 1px solid #eee;*/
+	background: #F1F3F4 ;
+	height: 15px ;
+	position: relative;
+}
+div.p_part{
+	height: 100% ;
+	position: absolute; 
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 50% ;
+	/*background: green ;*/
+	background: rgba(14, 144, 53, 0.6);
+}
+div.frame{
+	width: 100% ;
+	display: flex ;
+	justify-content: center ;
 }
