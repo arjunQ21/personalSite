@@ -92,6 +92,13 @@ div.buttons a:active{
 	background: #333 ;
 	border-left:2px solid #777; ;
 }
+.normalText{
+	/*font-weight: bold ;*/
+	color: #333;
+	font-family: Tahoma ;
+	font-size: 110% ;
+	letter-spacing: 1px ;
+}
 div.tab{
 	/*border: 1px solid #333;*/
 	padding: 10px;
@@ -100,10 +107,11 @@ div.tab{
 }
 div.tab_title{
 	font-weight: bold ;
-	padding: 12px 20px;
+	padding: 12px 40px;
 	font-size: 190% ;
-	letter-spacing: 2px ;
+	letter-spacing: 3px ;
 	color: #555 ;
+	/*font-style: italic;*/
 	/*background: rgba(0,0,0,0.1);*/
 	/*background: #D8DADB ;*/
 	background: #F1F3F4 ;
@@ -121,7 +129,7 @@ div.tab_content{
 
 }
 div.icon_texts{
-	font-size: 140% ;
+	font-size: 110% ;
 	/*color: #333 ;*/
 }
 div.icon_texts a, .links{
@@ -137,16 +145,24 @@ div.icon_texts a{
 	display: grid ;
 	grid-template-columns: 35px auto ;
 	/*grid-gap: 20px ;*/
-	grid-template-rows: 40px ;
+	/*grid-template-rows: 40px ;*/
+	grid-gap: 15px;
+	margin-bottom: 6px;
+	padding: 10px 0px;
 }
 div.icon_texts a:hover, .links:hover{
 	text-decoration: underline;
+	background: rgba(200, 200, 200, 0.4) ;
 }
 .links{
 	font-weight: bold ;
 }
+div.it_icon{
+	text-align: right !important;
+}
 div.it_icon i{
 	font-size: 25px !important;
+
 }
 div.skill{
 	display: grid ;
