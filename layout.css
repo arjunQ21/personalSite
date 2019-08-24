@@ -114,11 +114,11 @@ div.tab_title{
 	/*font-style: italic;*/
 	/*background: rgba(0,0,0,0.1);*/
 	/*background: #D8DADB ;*/
-	background: #F1F3F4 ;
+	/*background: #F1F3F4 ;*/
 	border-bottom: 1px solid rgba(0,0,0,0.09);
-	position: sticky;
+/*	position: sticky;
 	top: 0px;
-	z-index: 1;
+	z-index: 1;*/
 }
 div.tab_content{
 	font-family: sans-serif;
