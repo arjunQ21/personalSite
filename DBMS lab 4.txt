@@ -1,0 +1,319 @@
+Microsoft Windows [Version 10.0.18363.1316]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\xampp\mysql\bin>mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 2
+Server version: 10.1.37-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> create database lab4 ;
+Query OK, 1 row affected (0.08 sec)
+
+MariaDB [(none)]> use lab4 ;
+Database changed
+MariaDB [lab4]> create table customers(
+    -> id int auto_increment primary key,
+    -> name varchar(12) not null ,
+    -> age int not null ,
+    -> address varchar(20) not null,
+    -> salary numeric not null ) ;
+Query OK, 0 rows affected (1.07 sec)
+
+MariaDB [lab4]> describe customers ;
++---------+---------------+------+-----+---------+----------------+
+| Field   | Type          | Null | Key | Default | Extra          |
++---------+---------------+------+-----+---------+----------------+
+| id      | int(11)       | NO   | PRI | NULL    | auto_increment |
+| name    | varchar(12)   | NO   |     | NULL    |                |
+| age     | int(11)       | NO   |     | NULL    |                |
+| address | varchar(20)   | NO   |     | NULL    |                |
+| salary  | decimal(10,0) | NO   |     | NULL    |                |
++---------+---------------+------+-----+---------+----------------+
+5 rows in set (0.24 sec)
+
+MariaDB [lab4]> insert into customers values
+    -> ( 1 , 'Ramesh' , 32 , 'Ahmedabad' , 2000.00 ),
+    -> ( 2 , 'Khilan' , 25 , 'Delhi' , 1500.00 ),
+    -> ( 3 , 'kaushik' , 23 , 'Kota' , 2000.00 ),
+    -> ( 4 , 'Chaitali' , 25 , 'Mumbai' , 6500.00 ),
+    -> ( 5 , 'Hardik' , 27 , 'Bhopal' , 8500.00 ,
+    -> ( 6 , 'Komal' , 22 , 'MP' , 4500.00 ),
+    -> ( 7 , 'Muffy' , 24 , 'Indore' , 10000.00 );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 8
+MariaDB [lab4]> insert into customers values
+    -> ( 1 , "Ramesh" , 32 , "Ahmedabad" , 2000.00 ),
+    -> ( 2 , "Khilan" , 25 , "Delhi" , 1500.00 ),
+    -> ( 3 , "kaushik" , 23 , "Kota" , 2000.00 ),
+    -> ( 4 , "Chaitali" , 25 , "Mumbai" , 6500.00 ),
+    -> ( 5 , "Hardik" , 27 , "Bhopal" , 8500.00 ,
+    -> ( 6 , "Komal" , 22 , "MP" , 4500.00 ),
+    -> ( 7 , "Muffy" , 24 , "Indore" , 10000.00 );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 8
+MariaDB [lab4]> insert into customers values
+    -> ( 1 , "Ramesh" , 32 , "Ahmedabad" , 2000.00 );
+Query OK, 1 row affected (0.06 sec)
+
+MariaDB [lab4]> insert into customers values
+    -> ( 1 , "Ramesh" , 32 , "Ahmedabad" , 2000.00 ),
+    -> ( 2 , "Khilan" , 25 , "Delhi" , 1500.00 );
+ERROR 1062 (23000): Duplicate entry '1' for key 'PRIMARY'
+MariaDB [lab4]> delete from customers where 1 ;
+Query OK, 1 row affected (0.07 sec)
+
+MariaDB [lab4]> insert into customers values
+    -> ( 1 , "Ramesh" , 32 , "Ahmedabad" , 2000.00 ),
+    -> ( 2 , "Khilan" , 25 , "Delhi" , 1500.00 ),
+    -> ( 3 , "kaushik" , 23 , "Kota" , 2000.00 ),
+    -> ( 4 , "Chaitali" , 25 , "Mumbai" , 6500.00 ),
+    -> ( 5 , "Hardik" , 27 , "Bhopal" , 8500.00 ,
+    -> ( 6 , "Komal" , 22 , "MP" , 4500.00 ),
+    -> ( 7 , "Muffy" , 24 , "Indore" , 10000.00 );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 8
+MariaDB [lab4]> insert into customers values
+    -> ( 1 , "Ramesh" , 32 , "Ahmedabad" , 2000.00 ),
+    -> ( 2 , "Khilan" , 25 , "Delhi" , 1500.00 ),
+    -> ( 3 , "kaushik" , 23 , "Kota" , 2000.00 ),
+    -> ( 4 , "Chaitali" , 25 , "Mumbai" , 6500.00 ),
+    -> ( 5 , "Hardik" , 27 , "Bhopal" , 8500.00 ,
+    -> ( 6 , "Komal" , 22 , "MP" , 4500.00 ),
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 7
+MariaDB [lab4]> insert into customers values
+    -> ( 1 , "Ramesh" , 32 , "Ahmedabad" , 2000.00 ),
+    -> ( 2 , "Khilan" , 25 , "Delhi" , 1500.00 ),
+    -> ( 3 , "kaushik" , 23 , "Kota" , 2000.00 ),
+    -> ( 4 , "Chaitali" , 25 , "Mumbai" , 6500.00 ),
+    -> ( 5 , "Hardik" , 27 , "Bhopal" , 8500.00 ,
+    -> ( 6 , "Komal" , 22 , "MP" , 4500.00 );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 7
+MariaDB [lab4]> insert into customers values ( 1 , "Ramesh" , 32 , "Ahmedabad" , 2000.00 );
+Query OK, 1 row affected (0.03 sec)
+
+MariaDB [lab4]> insert into customers values ( 2 , "Khilan" , 25 , "Delhi" , 1500.00 );
+Query OK, 1 row affected (0.01 sec)
+
+MariaDB [lab4]> insert into customers values ( 3 , "kaushik" , 23 , "Kota" , 2000.00 );
+Query OK, 1 row affected (0.02 sec)
+
+MariaDB [lab4]> insert into customers values ( 4 , "Chaitali" , 25 , "Mumbai" , 6500.00 );
+Query OK, 1 row affected (0.02 sec)
+
+MariaDB [lab4]> insert into customers values ( 5 , "Hardik" , 27 , "Bhopal" , 8500.00 ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+MariaDB [lab4]> insert into customers values ( 6 , "Komal" , 22 , "MP" , 4500.00 );
+Query OK, 1 row affected (0.02 sec)
+
+MariaDB [lab4]> insert into customers values ( 7 , "Muffy" , 24 , "Indore" ; 10000.00 );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '10000.00 )' at line 1
+MariaDB [lab4]> insert into customers values ( 7 , "Muffy" , 24 , "Indore" , 10000.00 );
+Query OK, 1 row affected (0.04 sec)
+
+MariaDB [lab4]> select * from customers ;
++----+----------+-----+-----------+--------+
+| id | name     | age | address   | salary |
++----+----------+-----+-----------+--------+
+|  1 | Ramesh   |  32 | Ahmedabad |   2000 |
+|  2 | Khilan   |  25 | Delhi     |   1500 |
+|  3 | kaushik  |  23 | Kota      |   2000 |
+|  4 | Chaitali |  25 | Mumbai    |   6500 |
+|  6 | Komal    |  22 | MP        |   4500 |
+|  7 | Muffy    |  24 | Indore    |  10000 |
++----+----------+-----+-----------+--------+
+6 rows in set (0.00 sec)
+
+MariaDB [lab4]> create view customers_view as select name, age from customers ;
+Query OK, 0 rows affected (0.50 sec)
+
+MariaDB [lab4]> select * from customers_view ;
++----------+-----+
+| name     | age |
++----------+-----+
+| Ramesh   |  32 |
+| Khilan   |  25 |
+| kaushik  |  23 |
+| Chaitali |  25 |
+| Komal    |  22 |
+| Muffy    |  24 |
++----------+-----+
+6 rows in set (0.07 sec)
+
+MariaDB [lab4]> select name from customers_view where age > 25 ;
++--------+
+| name   |
++--------+
+| Ramesh |
++--------+
+1 row in set (0.03 sec)
+
+MariaDB [lab4]> select name from customers_view where age = 25 ;
++----------+
+| name     |
++----------+
+| Khilan   |
+| Chaitali |
++----------+
+2 rows in set (0.01 sec)
+
+MariaDB [lab4]> drop view customers_view ;
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [lab4]> select count (*) from customers where age = 25 ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '*) from customers where age = 25' at line 1
+MariaDB [lab4]> select count(*) from customers where age = 25 ;
++----------+
+| count(*) |
++----------+
+|        2 |
++----------+
+1 row in set (0.04 sec)
+
+MariaDB [lab4]> select count(*) from customers ;
++----------+
+| count(*) |
++----------+
+|        6 |
++----------+
+1 row in set (0.00 sec)
+
+MariaDB [lab4]> select min(age) from customers ;
++----------+
+| min(age) |
++----------+
+|       22 |
++----------+
+1 row in set (0.01 sec)
+
+MariaDB [lab4]> select max(age) from customers ;
++----------+
+| max(age) |
++----------+
+|       32 |
++----------+
+1 row in set (0.00 sec)
+
+MariaDB [lab4]> select avg(salary) from customers ;
++-------------+
+| avg(salary) |
++-------------+
+|   4416.6667 |
++-------------+
+1 row in set (0.03 sec)
+
+MariaDB [lab4]> select sum(salary) from customers ;
++-------------+
+| sum(salary) |
++-------------+
+|       26500 |
++-------------+
+1 row in set (0.00 sec)
+
+MariaDB [lab4]> ^Linsert into customers values ( 7 , "Muffy" , 24 , "Indore" , 10000.00 );
+ERROR 1062 (23000): Duplicate entry '7' for key 'PRIMARY'
+MariaDB [lab4]> update customers set name = "Ramesh" where id = 2 ;
+Query OK, 1 row affected (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [lab4]> update customers set name = "kaushik" where id = 4 ;
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [lab4]> select name, sum(salary) from customers group by name ;
++---------+-------------+
+| name    | sum(salary) |
++---------+-------------+
+| kaushik |        8500 |
+| Komal   |        4500 |
+| Muffy   |       10000 |
+| Ramesh  |        3500 |
++---------+-------------+
+4 rows in set (0.01 sec)
+
+MariaDB [lab4]> select * from customers order by name desc, age ;
++----+---------+-----+-----------+--------+
+| id | name    | age | address   | salary |
++----+---------+-----+-----------+--------+
+|  2 | Ramesh  |  25 | Delhi     |   1500 |
+|  1 | Ramesh  |  32 | Ahmedabad |   2000 |
+|  7 | Muffy   |  24 | Indore    |  10000 |
+|  6 | Komal   |  22 | MP        |   4500 |
+|  3 | kaushik |  23 | Kota      |   2000 |
+|  4 | kaushik |  25 | Mumbai    |   6500 |
++----+---------+-----+-----------+--------+
+6 rows in set (0.00 sec)
+
+MariaDB [lab4]> select * from customers where address in('Kota', "Mumbai", "Indore") ;
++----+---------+-----+---------+--------+
+| id | name    | age | address | salary |
++----+---------+-----+---------+--------+
+|  3 | kaushik |  23 | Kota    |   2000 |
+|  4 | kaushik |  25 | Mumbai  |   6500 |
+|  7 | Muffy   |  24 | Indore  |  10000 |
++----+---------+-----+---------+--------+
+3 rows in set (0.00 sec)
+
+MariaDB [lab4]> select * from customers where id in(select id from customers where salary > 4500) ;
++----+---------+-----+---------+--------+
+| id | name    | age | address | salary |
++----+---------+-----+---------+--------+
+|  4 | kaushik |  25 | Mumbai  |   6500 |
+|  7 | Muffy   |  24 | Indore  |  10000 |
++----+---------+-----+---------+--------+
+2 rows in set (0.02 sec)
+
+MariaDB [lab4]> update customers set salary = salary*0.25 where age in(select age from customers where age > 27) ;
+ERROR 1093 (HY000): Table 'customers' is specified twice, both as a target for 'UPDATE' and as a separate source for data
+MariaDB [lab4]> update customers set salary = salary*0.25 where age > 27 ;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [lab4]> create table Customer(
+    -> CustID int primary key,
+    -> Name varchar(20)
+    -> address varchar(20)
+    -> contactno varchar(15) ) ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'varchar(20)
+contactno varchar(15) )' at line 4
+MariaDB [lab4]> create table Customer(
+    -> CustID int primary key,
+    -> Name varchar(20) ,
+    -> contactno varchar(15) ) ;
+Query OK, 0 rows affected (0.14 sec)
+
+MariaDB [lab4]> create table Product(
+    -> ProductID int,
+    -> name varchar(20),
+    -> unitprice varchar(20),
+    -> catid varchar(20),
+    -> entrydate datetime ) ;
+Query OK, 0 rows affected (0.22 sec)
+
+MariaDB [lab4]> create table Order(
+    -> orderid int,
+    -> productid int,
+    -> quantity int,
+    -> price int,
+    -> customerid int,
+    -> contactno varchar(20)) ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Order(
+orderid int,
+productid int,
+quantity int,
+price int,
+customerid int,
+cont' at line 1
+MariaDB [lab4]> create table Orders(
+    -> orderid int,
+    -> productid int,
+    -> quantity int,
+    -> price int,
+    -> customerid int,
+    -> contactno varchar(20)) ;
+Query OK, 0 rows affected (0.25 sec)
+
+MariaDB [lab4]>
